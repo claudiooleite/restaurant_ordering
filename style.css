@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+header {
+  height: 20vh;
+  background-image: url("./images/burger.jpg");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  color: whitesmoke;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header h1,
+header h2 {
+  margin: 0 30px 0 30px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.container-item {
+  display: flex;
+  gap: 10px;
+  max-width: 400px;
+}
+
+.emoji-food {
+  font-size: 50px;
+}
+
+.add-btn {
+  margin-left: auto;
+}
+
+/* .order {
+  display: none;
+} */
