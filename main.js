@@ -128,7 +128,7 @@ const renderTotalPrice = () => {
   const totalPriceElement = document.createElement("div");
   totalPriceElement.id = "total-price-element";
   totalPriceElement.innerHTML = `
-    <h3 class='total-price-h3'>Total price: <span id='total-price-id'>$${totalPrice}</span></h3>
+    <h2 class='total-price-h2'>Total price: <span id='total-price-id'>$${totalPrice}</span></h2>
     <button id="complete-order-btn">Complete Order</button>
   `;
   orderDiv.insertAdjacentElement("afterend", totalPriceElement);
