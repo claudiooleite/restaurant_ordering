@@ -22,6 +22,35 @@
       <div id="container"></div>
       <div id="order-div"></div>
       <div id="payment-div"></div>
+      <div class="modal" id="modal">
+        <form id="cardDetailsForm">
+          <h1>Enter card details</h1>
+          <input
+            type="text"
+            id="cardName"
+            name="cardName"
+            placeholder="Enter your name"
+            required
+            minlength="3" />
+          <input
+            type="text"
+            id="cardNumber"
+            name="cardNumber"
+            placeholder="Enter your card number"
+            required
+            maxlength="9"
+            minlength="9" />
+          <input
+            type="text"
+            id="cardCVV"
+            name="cardCVV"
+            placeholder="Enter cvv"
+            required
+            maxlength="3"
+            minlength="3" />
+          <button type="submit">Pay</button>
+        </form>
+      </div>
     </main>
     <script type="module" src="main.js"></script>
   </body>
