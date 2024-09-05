@@ -15,7 +15,7 @@ const menuItemList = () => {
         <div class="menu-item">
           <h2>${item.name}</h2>
           <p>${item.ingredients.join(", ")}</p>
-          <p>Price: $${item.price}</p>
+          <h2>$${item.price}</h2>
         </div>
         <button class="add-btn btn-${item.id}" data-id="${item.id}">+</button>
       </div>`;
@@ -61,15 +61,21 @@ for (let btn of addBtns) {
   btn.addEventListener("click", addItem);
 }
 
+const orderTitleHtml = `
+<h2 id='order-title'>Your Order</h2>
+`;
+
 const renderOrder = (item) => {
+  if (basketItems.length === 0) {
+    orderDiv.innerHTML = orderTitleHtml;
+  }
+
   // Render the order item
   orderDiv.innerHTML += `
       <div class="order-item" id="order-item-${item.id}">
-        <div>
           <h3>${item.name}</h3>
           <button class="remove-btn" data-id="${item.id}">remove</button>
-          <p>PRICE: $${item.price}</p>
-        </div>
+          <h3 class="price-p">$${item.price}</h3>
       </div>
     `;
 
@@ -109,6 +115,7 @@ const removeItem = (itemId) => {
 
   // Remove total price section if basket is empty
   if (basketItems.length === 0) {
+    orderDiv.innerHTML = "";
     const totalPriceElement = document.querySelector("#total-price-element");
     if (totalPriceElement) {
       totalPriceElement.remove();
@@ -121,7 +128,7 @@ const renderTotalPrice = () => {
   const totalPriceElement = document.createElement("div");
   totalPriceElement.id = "total-price-element";
   totalPriceElement.innerHTML = `
-    <h3>Total price: <span id='total-price-id'>$${totalPrice}</span></h3>
+    <h3 class='total-price-h3'>Total price: <span id='total-price-id'>$${totalPrice}</span></h3>
     <button id="complete-order-btn">Complete Order</button>
   `;
   orderDiv.insertAdjacentElement("afterend", totalPriceElement);
